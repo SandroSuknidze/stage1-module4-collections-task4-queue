@@ -14,12 +14,11 @@ public class ArrayDequeCreator extends PriorityQueue<String> {
         arrayDeque.offer(secondQueue.poll());
 
         while (!firstQueue.isEmpty() || !secondQueue.isEmpty()) {
-            firstQueue.offer(arrayDeque.poll());
+            firstQueue.offer(arrayDeque.pollLast());
             arrayDeque.offer(firstQueue.poll());
             arrayDeque.offer(firstQueue.poll());
 
-
-            secondQueue.offer(arrayDeque.poll());
+            secondQueue.offer(arrayDeque.pollLast());
             arrayDeque.offer(secondQueue.poll());
             arrayDeque.offer(secondQueue.poll());
         }
